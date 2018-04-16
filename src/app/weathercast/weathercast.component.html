@@ -50,35 +50,3 @@
   </div> 
 </div>
 </div>
-
-
-<div class=" container row make-center">
-<table class="table table-bordered text-center col-lg-2 offser-lg-2" *ngFor="let weather of weathers">
-        <thead>
-          <tr>
-            <th colspan=2><b>Date: {{weather.date | date}}</b></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td  colspan=2>Temperature</td>
-          </tr>
-          <tr>
-            <td>Max</td>
-            <td>Min</td>
-          </tr>
-          <tr>
-            <td>{{weather.tempMax}}</td>
-            <td>{{weather.tempMin}}</td>
-          </tr>
-          <tr>
-            <td>Pressure</td>
-            <td>{{weather.pressure}}</td>
-          </tr>
-           <tr>
-            <td>humidity</td>
-            <td>{{weather.humidity}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>

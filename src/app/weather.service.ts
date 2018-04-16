@@ -12,6 +12,6 @@ export class WeatherService {
   getWeatherFor5Days(location: string) {
 
    return this.http.get(
-  `http://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=2f54db498238ca498d6c732647aa16fc&units=imperial`);
+  `https://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=2f54db498238ca498d6c732647aa16fc&units=imperial`);
   }
 }
