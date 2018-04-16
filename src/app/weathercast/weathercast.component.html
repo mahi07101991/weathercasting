@@ -1,0 +1,84 @@
+
+<div class="container">
+        <form class="form-inline weathersection" [formGroup]="weatherForm" (ngSubmit)="getWeatherFor5Days()">
+            <h2 class="move-sides">Weather in your city</h2>
+            <input type="text" class="form-control move-sides" 
+            formControlName="city" name="city"
+            placeholder="City Name">
+            <span>
+                <button type="submit" class="btn btn-primary">Submit</button>        
+            </span>          
+        </form>
+      </div>
+
+<div class="weathersection">
+
+  <div class="row">
+    <div  class="col-sm-6 col-md-4 col-lg-3 " *ngFor="let weather of weathers">
+    <div class="weather-block">
+        
+        <p class="data-block"><b>Date: {{weather.date | date}}</b></p>
+
+      <div class="temperature">
+        <p>Temperature</p>
+      </div>
+      <div class="minandmax">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <p>Max</p>
+                <p>{{weather.tempMax}}</p></div>
+            <div class="col-sm-6">
+                <p>Min</p>
+                <p>{{weather.tempMix}}</p></div>
+        </div>
+      </div>
+      <div class="pressure">
+          <div class="row">
+              <div class="col-sm-6"><p>Pressure</p></div>
+              <div class="col-sm-6"><p>{{weather.pressure}}</p></div>
+          </div>
+        </div>
+        <div class="humidity">
+            <div class="row">
+                <div class="col-sm-6"><p>humidity</p></div>
+                <div class="col-sm-6"><p>{{weather.humidity}}</p></div>
+            </div>
+        </div>
+
+  </div>
+  </div> 
+</div>
+</div>
+
+
+<div class=" container row make-center">
+<table class="table table-bordered text-center col-lg-2 offser-lg-2" *ngFor="let weather of weathers">
+        <thead>
+          <tr>
+            <th colspan=2><b>Date: {{weather.date | date}}</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td  colspan=2>Temperature</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>Min</td>
+          </tr>
+          <tr>
+            <td>{{weather.tempMax}}</td>
+            <td>{{weather.tempMin}}</td>
+          </tr>
+          <tr>
+            <td>Pressure</td>
+            <td>{{weather.pressure}}</td>
+          </tr>
+           <tr>
+            <td>humidity</td>
+            <td>{{weather.humidity}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

@@ -1,0 +1,66 @@
+.weather-block {
+    border: 2px solid black;
+    padding:5px;
+    margin: 10px;
+}
+p {
+    text-align: center;
+}
+.weathersection {
+    margin-top:100px !important;
+    
+}
+.data-block {
+    background-color: #ff6a00;;
+    margin:-5px;
+
+    padding-bottom: 5px;
+}
+.display-1 {
+    color:#ff6a00;;
+}
+.move-sides {
+    margin: 20px 15px;
+    color: #ff6000;
+}
+h2 {
+    padding: 20px;
+}
+button,button:hover {
+    margin: 20px;
+    background-color: #ff6000;
+    border: 0px;
+}
+input[type="text"] {
+    border: 2px solid #ff6000;
+    width:300px;
+}
+
+@media (max-width: 1024px) { 
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    span {
+        margin: 0px auto;
+    }
+}
+
+.border-black {
+    border: 2px solid black;
+}
+.temperature {
+    margin-top:5px;
+    border-bottom: 2px solid black;
+}
+table {
+
+    width: 15% !important;
+    padding: 10%;
+    margin: 20px;
+}
+
+.make-center {
+    margin-right: -15px;
+
+}
