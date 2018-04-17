@@ -1,17 +1,38 @@
-.weather-block {
-    border: 2px solid black;
-    padding:5px;
-    margin: 10px;
+h2, input[type="text"], button, app-spinner  {
+    margin: 25px auto;
 }
-p {
-    text-align: center;
+@media (min-width:0px) and (max-width: 575px) {
+    button {
+        position: relative;
+        left: 40%;
+    }
+}
+@media (min-width:576px) and (max-width: 767px) {
+    input[type="text"] {
+        margin-left: 1%;
+    }
+}
+app-spinner[_ngcontent-c1] {
+
+    margin: -81px auto;
+
+}
+.border-table {
+    border: 2px solid black;
+padding: 5px;
 }
 .weathersection {
-    margin-top:100px !important;
-    
+    margin: 10% auto;
+}
+p {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.border-rights {
+    border-right:5px
 }
 .data-block {
-    background-color: #ff6a00;;
+    background-color: #ff6a00;
     margin:-5px;
 
     padding-bottom: 5px;
@@ -23,22 +44,17 @@ p {
     margin: 20px 15px;
     color: #ff6000;
 }
-h2 {
-    padding: 20px;
-}
 button,button:hover {
-    margin: 20px;
     background-color: #ff6000;
-    border: 0px;
 }
 input[type="text"] {
     border: 2px solid #ff6000;
-    width:300px;
+    color:  #ff6000;
 }
 
 @media (max-width: 1024px) { 
     h2 {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
     }
     span {
@@ -51,11 +67,12 @@ input[type="text"] {
 }
 .temperature {
     margin-top:5px;
+    margin: 0px -7px;
     border-bottom: 2px solid black;
 }
 table {
 
-    width: 15% !important;
+    width: 150px;
     padding: 10%;
     margin: 20px;
 }
@@ -63,4 +80,24 @@ table {
 .make-center {
     margin-right: -15px;
 
+}
+@media (min-width: 992px) {
+.col-lg-3 {
+    max-width: 19.9% !important;
+}
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    h2 {
+        font-size: 18px;
+    }
+}
+
+form {
+width: 80%;
+margin-top: 5%;
+margin: 0px auto;
+}
+
+.tabel-row {
+    margin: 0.4%;
 }

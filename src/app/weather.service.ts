@@ -4,7 +4,6 @@ import { Http, Response } from '@angular/http';
 import { Forecast } from './forcast';
 @Injectable()
 export class WeatherService {
-
   constructor(private http: HttpClient) {
 
    }

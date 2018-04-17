@@ -1,20 +1,21 @@
 
-<div class="container">
-        <form class="form-inline weathersection" [formGroup]="weatherForm" (ngSubmit)="getWeatherFor5Days()">
-            <h2 class="move-sides">Weather in your city</h2>
-            <input type="text" class="form-control move-sides" 
+<form class="form-inline" [formGroup]="weatherForm" (ngSubmit)="getWeatherFor5Days()">
+    <div class="container form-group">
+            <h2 class="move-sides  mb2">Weather in your city</h2>  
+            <input type="text" class=" form-control move-sides  mb2" 
             formControlName="city" name="city"
             placeholder="City Name">
-            <span>
-                <button type="submit" class="btn btn-primary">Submit</button>        
-            </span>          
-        </form>
-      </div>
+            <button type="submit" class="center-block btn btn-primary mb2">Submit</button>
+            <ng-template [ngIf]="weatherSpinner">
+                    <app-spinner class=" mb2"></app-spinner>
+            </ng-template>
+    </div>
+</form>
 
 <div class="weathersection">
 
-  <div class="row">
-    <div  class="col-sm-6 col-md-4 col-lg-3 " *ngFor="let weather of weathers">
+  <div class="row tabel-row">
+    <div  class="col-sm-6 col-md-4 col-lg-3 table " *ngFor="let weather of weathers">
     <div class="weather-block">
         
         <p class="data-block"><b>Date: {{weather.date | date}}</b></p>
@@ -25,24 +26,24 @@
       <div class="minandmax">
         <div class="row">
             
-            <div class="col-sm-6">
+            <div class="col">
                 <p>Max</p>
                 <p>{{weather.tempMax}}</p></div>
-            <div class="col-sm-6">
+            <div class="col">
                 <p>Min</p>
                 <p>{{weather.tempMix}}</p></div>
         </div>
       </div>
-      <div class="pressure">
+      <div class="pressure ">
           <div class="row">
-              <div class="col-sm-6"><p>Pressure</p></div>
-              <div class="col-sm-6"><p>{{weather.pressure}}</p></div>
+              <div class="col"><p>Pressure</p></div>
+              <div class="col"><p>{{weather.pressure}}</p></div>
           </div>
         </div>
         <div class="humidity">
             <div class="row">
-                <div class="col-sm-6"><p>humidity</p></div>
-                <div class="col-sm-6"><p>{{weather.humidity}}</p></div>
+                <div class="col"><p>humidity</p></div>
+                <div class="col"><p>{{weather.humidity}}</p></div>
             </div>
         </div>
 

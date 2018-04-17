@@ -8,11 +8,14 @@ import { WeathercastComponent } from './weathercast/weathercast.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { WeatherService } from './weather.service';
 import { HttpModule } from '@angular/http';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeathercastComponent
+    WeathercastComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,7 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule,
     HttpModule
 
 
