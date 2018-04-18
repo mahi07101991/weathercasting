@@ -3,6 +3,8 @@ import { FormControl,  FormGroup,  FormBuilder, Validators } from '@angular/form
 import { WeatherService } from '../weather.service';
 import { Forecast} from '../forcast';
 import { NgIf } from '@angular/common';
+import { WeatherDirective } from '../weather.directive';
+
 @Component({
   selector: 'app-weathercast',
   templateUrl: './weathercast.component.html',
@@ -11,17 +13,20 @@ import { NgIf } from '@angular/common';
 export class WeathercastComponent implements OnInit {
   weatherSpinner = false;
   weathers: Forecast[] = [];
-
+  wrongCity = '';
   weatherForm = new FormGroup ({
     city: new FormControl('', [Validators.required]),
   });
-
+  clearAlert() {
+    this.wrongCity = '';
+  }
   constructor(private weatherService: WeatherService) {
 
    }
 
   ngOnInit() {
   }
+
 
   getWeatherFor5Days() {
     this.onoffSpinner(false);
@@ -45,9 +50,11 @@ export class WeathercastComponent implements OnInit {
        },
 
        (error) => {
-          console.log(error);
+          console.log('error');
           this.onoffSpinner(true);
-
+          setTimeout(() => {
+            this.wrongCity = 'No values found with the provided city. Please enter city name!';
+          }, 3000);
         }
       );
     }, 5000);

@@ -1,11 +1,17 @@
+<br>
+<br>
+
+ <ng-template [ngIf]="wrongCity">
+    <div class="container alert alert-danger">{{wrongCity}}</div>
+</ng-template>
 
 <form class="form-inline" [formGroup]="weatherForm" (ngSubmit)="getWeatherFor5Days()">
     <div class="container form-group">
             <h2 class="move-sides  mb2">Weather in your city</h2>  
             <input type="text" class=" form-control move-sides  mb2" 
             formControlName="city" name="city"
-            placeholder="City Name">
-            <button type="submit" class="center-block btn btn-primary mb2">Submit</button>
+            placeholder="City Name" appWeather (keydown)="clearAlert()">
+            <button type="submit" class="center-block btn btn-default mb2" [disabled]="!weatherForm.valid">Submit</button>
             <ng-template [ngIf]="weatherSpinner">
                     <app-spinner class=" mb2"></app-spinner>
             </ng-template>

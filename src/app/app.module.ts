@@ -10,12 +10,14 @@ import { WeatherService } from './weather.service';
 import { HttpModule } from '@angular/http';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CommonModule } from '@angular/common';
+import { WeatherDirective } from './weather.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeathercastComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    WeatherDirective
   ],
   imports: [
     BrowserModule,
